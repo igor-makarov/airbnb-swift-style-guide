@@ -2,7 +2,8 @@
 --exclude Carthage,Pods,.build
 
 # options
---swiftversion 5.10
+--swiftversion 6.0
+--languagemode 5
 --self remove # redundantSelf
 --importgrouping testable-bottom # sortedImports
 --commas always # trailingCommas
@@ -33,9 +34,10 @@
 --organizetypes class,struct,enum,extension,actor # organizeDeclarations
 --visibilityorder beforeMarks,instanceLifecycle,open,public,package,internal,fileprivate,private # organizeDeclarations
 --typeorder nestedType,staticProperty,staticPropertyWithBody,classPropertyWithBody,swiftUIPropertyWrapper,instanceProperty,instancePropertyWithBody,staticMethod,classMethod,instanceMethod # organizeDeclarations
+--sortswiftuiprops first-appearance-sort #organizeDeclarations
 --extensionacl on-declarations # extensionAccessControl
 --patternlet inline # hoistPatternLet
---redundanttype inferred # redundantType, propertyType
+--propertytypes inferred # redundantType, propertyTypes
 --typeblanklines preserve # blankLinesAtStartOfScope, blankLinesAtEndOfScope
 --emptybraces spaced # emptyBraces
 --ranges preserve # spaceAroundOperators
@@ -58,6 +60,7 @@
 --rules consecutiveBlankLines
 --rules duplicateImports
 --rules extensionAccessControl
+--rules environmentEntry
 --rules hoistPatternLet
 --rules indent
 --rules markTypes
@@ -70,6 +73,7 @@
 --rules redundantGet
 --rules redundantFileprivate
 --rules redundantRawValues
+--rules redundantEquatable
 --rules sortImports
 --rules sortDeclarations
 --rules strongifiedSelf
@@ -98,7 +102,7 @@
 --rules enumNamespaces
 --rules blockComments
 --rules docComments
---rules docCommentsBeforeAttributes
+--rules docCommentsBeforeModifiers
 --rules spaceAroundComments
 --rules spaceInsideComments
 --rules blankLinesAtStartOfScope
@@ -113,10 +117,12 @@
 --rules preferForLoop
 --rules conditionalAssignment
 --rules wrapMultilineConditionalAssignment
+--rules void
 --rules blankLineAfterSwitchCase
 --rules consistentSwitchCaseSpacing
 --rules semicolons
---rules propertyType
+--rules propertyTypes
 --rules blankLinesBetweenChainedFunctions
---rules unusedPrivateDeclaration
---rules emptyExtension
+--rules emptyExtensions
+--rules preferCountWhere
+--rules swiftTestingTestCaseNames

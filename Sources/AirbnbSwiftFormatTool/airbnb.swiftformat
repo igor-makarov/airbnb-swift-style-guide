@@ -141,9 +141,12 @@
 --rules preferCountWhere
 --rules isEmpty
 --rules preferFlatMap
---rules preferContains
---rules preferFirstWhere
---rules preferMinOverSorted
+# gradual adoption
+#--rules preferContains
+# gradual adoption
+#--rules preferFirstWhere
+# gradual adoption
+#--rules preferMinOverSorted
 --rules swiftTestingTestCaseNames
 --rules redundantSwiftTestingSuite
 --rules modifiersOnSameLine

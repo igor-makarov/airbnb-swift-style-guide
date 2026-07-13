@@ -5,10 +5,10 @@ let package = Package(
   name: "AirbnbSwift",
   platforms: [.macOS(.v10_13)],
   products: [
-    .plugin(name: "FormatSwift", targets: ["FormatSwift"]),
+    .plugin(name: "FormatSwift", targets: ["FormatSwift"])
   ],
   dependencies: [
-    .package(url: "https://github.com/apple/swift-argument-parser", from: "1.0.3"),
+    .package(url: "https://github.com/apple/swift-argument-parser", from: "1.0.3")
   ],
   targets: [
     .plugin(
@@ -16,37 +16,45 @@ let package = Package(
       capability: .command(
         intent: .custom(
           verb: "format",
-          description: "Formats Swift source files according to the Airbnb Swift Style Guide"),
+          description: "Formats Swift source files according to the Airbnb Swift Style Guide"
+        ),
         permissions: [
-          .writeToPackageDirectory(reason: "Format Swift source files"),
-        ]),
+          .writeToPackageDirectory(reason: "Format Swift source files")
+        ]
+      ),
       dependencies: [
         "AirbnbSwiftFormatTool",
         "swiftformat",
         "SwiftLintBinary",
-      ]),
+      ]
+    ),
 
     .executableTarget(
       name: "AirbnbSwiftFormatTool",
       dependencies: [
-        .product(name: "ArgumentParser", package: "swift-argument-parser"),
+        .product(name: "ArgumentParser", package: "swift-argument-parser")
       ],
       resources: [
         .process("airbnb.swiftformat"),
         .process("swiftlint.yml"),
-      ]),
+      ]
+    ),
 
     .testTarget(
       name: "AirbnbSwiftFormatToolTests",
-      dependencies: ["AirbnbSwiftFormatTool"]),
+      dependencies: ["AirbnbSwiftFormatTool"]
+    ),
 
     .binaryTarget(
       name: "swiftformat",
-      url: "https://github.com/calda/SwiftFormat-nightly/releases/download/2025-05-08-b/SwiftFormat.artifactbundle.zip",
-      checksum: "ce079f8a7c8d8ba2f9d6aa461367808b2d56b99739b0791946ed23059da88017"),
+      url: "https://github.com/calda/SwiftFormat-nightly/releases/download/2026-07-07/SwiftFormat.artifactbundle.zip",
+      checksum: "aa108373407da339355f896c77254519e667e5905db9d239b767ac315e275b4c"
+    ),
 
     .binaryTarget(
       name: "SwiftLintBinary",
-      url: "https://github.com/realm/SwiftLint/releases/download/0.55.1/SwiftLintBinary-macos.artifactbundle.zip",
-      checksum: "722a705de1cf4e0e07f2b7d2f9f631f3a8b2635a0c84cce99f9677b38aa4a1d6"),
-  ])
+      url: "https://github.com/realm/SwiftLint/releases/download/0.62.2/SwiftLintBinary.artifactbundle.zip",
+      checksum: "3047357eee0838a0bafc7a6e65cd1aad61734b30d7233e28f3434149fe02f522"
+    ),
+  ]
+)

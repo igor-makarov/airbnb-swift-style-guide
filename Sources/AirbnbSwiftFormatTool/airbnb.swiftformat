@@ -148,7 +148,8 @@
 # gradual adoption
 #--rules preferMinOverSorted
 --rules swiftTestingTestCaseNames
---rules redundantSwiftTestingSuite
+# gradual adoption
+#--rules redundantSwiftTestingSuite
 --rules modifiersOnSameLine
 --rules noForceTryInTests
 --rules noForceUnwrapInTests
@@ -162,6 +163,7 @@
 --rules redundantTypedThrows
 --rules preferFinalClasses
 --rules simplifyGenericConstraints
---rules redundantEmptyView
+# gradual adoption
+#--rules redundantEmptyView
 --rules redundantViewBuilder
 --rules redundantSwiftUIGroup
